@@ -1,0 +1,154 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Mini code retreat</title>
+
+		<meta name="author" content="Simon Caplette">
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>		
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script>
+			// If the query includes 'print-pdf' we'll use the PDF print sheet
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		
+		<div class="reveal">
+		    <div class="slides"> 
+				<section><h1>Mini code retreat</h1></section>
+		        <section>
+					<h2>Guidelines</h2>
+					<ul>
+						<li>3 itérations de 40 minutes</li>
+						<li>itération en pair programming & TDD</li>
+						<li>10 minutes de rétrospective</li>
+						<li>on efface tout le code (oui... tout)</li>
+						<li>5 minutes pour changer de paire... et on recommence</li>
+					</ul>
+				</section>
+				<section><h1>Iteration 1</h1></section>
+				<section id="retro">
+					<h2>Retrospective</h2>
+					<ul>
+						<li>Est ce que votre code fonctionne à la fin de la session ?</li>
+						<li>Un choix d’implémentation particulier ?</li>
+						<li>Comment s’est passé votre pair programming ?</li>
+						<li>Comment s’est passé le TDD ? Comment cela vous a t-il aidé ?</li>
+						<li>Avez vous détecté des code smell ?</li>
+						<li>Avez vous détecté des communication smells ?</li>
+						<li>Des conseils pour les autres ?</li>
+					</ul>
+				</section>
+				<section>
+					<h2>XP - Simple Design Rules</h2>
+					<ul>
+						<li>Run all tests</li>
+						<li>Contains no duplication</li>
+						<li>Express all the idea the author wants to express</li>
+						<li>Minimize classes and methods</li>
+					</ul>
+				</section>
+		        <section>
+			        <section>
+						<h1>Iteration 2</h1>
+						<h1>+</h1>
+						<h1>Piments</h1>
+					</section>
+					<section>
+						<h1>Challenge</h1>
+						<img src="img/tdd-cycle.jpg">
+						<ol>
+							<li>Write a failing test for your pair</li>
+							<li>He makes it pass and refactor if neeeded</li>
+							<li>Now its turn to write you a failing test</li>
+							<li>... and back to 1</li>
+						</ol>
+					</section>
+					<section>
+						<h1>Tip...</h1>
+						<img src="img/tdd-pulse.png" width="500px">
+						<p>Never refactor when you are in the RED zone</p>
+					</section>
+				</section>
+				<section>
+					<h1>Iteration 2</h1>
+					<h1>Let's start...</h1>
+				</section>
+				<section>
+					<a href="#/retro">Retrospective</a>
+				</section>		        
+				<section>
+					<h1>Iteration 3</h1>
+					<h3>Pick a challenge</h3>
+					<ul>
+						<li>Method size < 4</li>
+						<li>No mouse</li>
+						<li>No loop</li>
+						<li>Evrything is immutable</li>
+					</ul>
+				</section>	
+				<section>
+					<h1>Overall Retrospective</h1>
+					<ul>
+						<li>What did you learn today ?</li>
+						<li>What surprised you today ?</li>
+						<li>What will you apply & use on Monday at the office ?</li>
+					</ul>
+				</section>
+		    </div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Presentation progress bar -->
+			<div class="progress"><span></span></div>
+		
+		</div>
+
+		<!-- Reveal.js configuration -->
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				
+				theme: Reveal.getQueryHash().theme || 'xebia', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+					{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+				]
+			});
+			
+		</script>
+	</body>
+</html>
